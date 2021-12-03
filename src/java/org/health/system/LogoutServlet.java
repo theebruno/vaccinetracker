@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
+package org.health.system;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author almam
  */
-public class RegisterServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,27 +36,14 @@ public class RegisterServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegisterServlet</title>");            
+            out.println("<title>Servlet LogoutServlet</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            
-            String name = request.getParameter("name");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            //make user object
-            User userModel = new User(name, email, password);
-
-            //create database model
-            UserDatabase regUser = new UserDatabase(ConnectionPro.getConnection());
-            if (regUser.saveUser(userModel)) {
-                response.sendRedirect("index.jsp");
-            } else {
-                String errorMessage = "User Available";
-                HttpSession regSession = request.getSession();
-                regSession.setAttribute("RegError", errorMessage);
-                response.sendRedirect("registration.jsp");
-            }
+            HttpSession session = request.getSession();
+            session.removeAttribute("logUser");
+            session.invalidate();
+            response.sendRedirect("index.jsp");
             
             out.println("</body>");
             out.println("</html>");

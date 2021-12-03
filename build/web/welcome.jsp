@@ -4,7 +4,7 @@
     Author     : almam
 --%>
 
-<%@page import="newpackage.User"%>
+<%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("logUser");
     if(user==null){
@@ -276,7 +276,7 @@
             </li>
               <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
+                <span class="icon-bg"><i class="mdi mdi-calendar-check menu-icon"></i></span>
                 <span class="menu-title">Booking and advisory</span>
                 <i class="menu-arrow"></i>
               </a>
