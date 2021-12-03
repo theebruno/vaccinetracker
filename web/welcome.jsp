@@ -1,3 +1,32 @@
+<%-- 
+    Document   : welcome
+    Created on : Jan 19, 2020, 10:26:06 PM
+    Author     : almam
+--%>
+
+<%@page import="newpackage.User"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% User user = (User) session.getAttribute("logUser");
+    if(user==null){
+        response.sendRedirect("index.jsp");
+    }
+%>
+<!DOCTYPE html>
+<!--<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Welcome Page</title>
+    </head>
+    <body>
+        <h1> Welcome, <%= user.getName() %></h1>
+        <h3>Your Account ID: <%= user.getId() %> </h3>
+        <h3>Your Email: <%= user.getEmail() %> </h3>
+        <h3>Your Password: <%= user.getPassword() %></h3>
+        
+        <button><a href="LogoutServlet">Log Out</a></button>
+    </body>
+</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,58 +73,7 @@
             </form>
           </div>
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item  dropdown d-none d-md-block">
-              <a class="nav-link dropdown-toggle" id="reportDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Reports </a>
-              <div class="dropdown-menu navbar-dropdown" aria-labelledby="reportDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-file-pdf mr-2"></i>PDF </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-file-excel mr-2"></i>Excel </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-file-word mr-2"></i>doc </a>
-              </div>
-            </li>
-            <li class="nav-item  dropdown d-none d-md-block">
-              <a class="nav-link dropdown-toggle" id="projectDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Projects </a>
-              <div class="dropdown-menu navbar-dropdown" aria-labelledby="projectDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-eye-outline mr-2"></i>View Project </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-pencil-outline mr-2"></i>Edit Project </a>
-              </div>
-            </li>
-            <li class="nav-item nav-language dropdown d-none d-md-block">
-              <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="nav-language-icon">
-                  <i class="flag-icon flag-icon-us" title="us" id="us"></i>
-                </div>
-                <div class="nav-language-text">
-                  <p class="mb-1 text-black">English</p>
-                </div>
-              </a>
-              <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
-                <a class="dropdown-item" href="#">
-                  <div class="nav-language-icon mr-2">
-                    <i class="flag-icon flag-icon-ae" title="ae" id="ae"></i>
-                  </div>
-                  <div class="nav-language-text">
-                    <p class="mb-1 text-black">Arabic</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  <div class="nav-language-icon mr-2">
-                    <i class="flag-icon flag-icon-gb" title="GB" id="gb"></i>
-                  </div>
-                  <div class="nav-language-text">
-                    <p class="mb-1 text-black">English</p>
-                  </div>
-                </a>
-              </div>
-            </li>
+            
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
@@ -350,59 +328,11 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="row" id="proBanner">
-              <div class="col-12">
-                <span class="d-flex align-items-center purchase-popup">
-                  <p>Like what you see? Check out our premium version for more.</p>
-                  <a href="https://github.com/BootstrapDash/ConnectPlusAdmin-Free-Bootstrap-Admin-Template" target="_blank" class="btn ml-auto download-button">Download Free Version</a>
-                  <a href="http://www.bootstrapdash.com/demo/connect-plus/jquery/template/" target="_blank" class="btn purchase-button">Upgrade To Pro</a>
-                  <i class="mdi mdi-close" id="bannerClose"></i>
-                </span>
-              </div>
-            </div>
-            <div class="d-xl-flex justify-content-between align-items-start">
-              <h2 class="text-dark font-weight-bold mb-2"> Overview dashboard </h2>
-              <div class="d-sm-flex justify-content-xl-between align-items-center mb-2">
-                <div class="btn-group bg-white p-3" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-link text-light py-0 border-right">7 Days</button>
-                  <button type="button" class="btn btn-link text-dark py-0 border-right">1 Month</button>
-                  <button type="button" class="btn btn-link text-light py-0">3 Month</button>
-                </div>
-                <div class="dropdown ml-0 ml-md-4 mt-2 mt-lg-0">
-                  <button class="btn bg-white dropdown-toggle p-3 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-calendar mr-1"></i>24 Mar 2019 - 24 Mar 2019 </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
-                    <h6 class="dropdown-header">Settings</h6>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+         
             <div class="row">
               <div class="col-md-12">
-                <div class="d-sm-flex justify-content-between align-items-center transaparent-tab-border {">
-                  <ul class="nav nav-tabs tab-transparent" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link" id="home-tab" data-toggle="tab" href="#" role="tab" aria-selected="true">Users</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" id="business-tab" data-toggle="tab" href="#business-1" role="tab" aria-selected="false">Business</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="performance-tab" data-toggle="tab" href="#" role="tab" aria-selected="false">Performance</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="conversion-tab" data-toggle="tab" href="#" role="tab" aria-selected="false">Conversion</a>
-                    </li>
-                  </ul>
-                  <div class="d-md-block d-none">
-                    <a href="#" class="text-light p-1"><i class="mdi mdi-view-dashboard"></i></a>
-                    <a href="#" class="text-light p-1"><i class="mdi mdi-dots-vertical"></i></a>
-                  </div>
-                </div>
+            
                 <div class="tab-content tab-transparent-content">
                   <div class="tab-pane fade show active" id="business-1" role="tabpanel" aria-labelledby="business-tab">
                     <div class="row">
@@ -451,105 +381,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-12 grid-margin">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="row">
-                              <div class="col-sm-12">
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                  <h4 class="card-title mb-0">Recent Activity</h4>
-                                  <div class="dropdown dropdown-arrow-none">
-                                    <button class="btn p-0 text-dark dropdown-toggle" type="button" id="dropdownMenuIconButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <i class="mdi mdi-dots-vertical"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuIconButton1">
-                                      <h6 class="dropdown-header">Settings</h6>
-                                      <a class="dropdown-item" href="#">Action</a>
-                                      <a class="dropdown-item" href="#">Another action</a>
-                                      <a class="dropdown-item" href="#">Something else here</a>
-                                      <div class="dropdown-divider"></div>
-                                      <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-3 col-sm-4 grid-margin  grid-margin-lg-0">
-                                <div class="wrapper pb-5 border-bottom">
-                                  <div class="text-wrapper d-flex align-items-center justify-content-between mb-2">
-                                    <p class="mb-0 text-dark">Total Profit</p>
-                                    <span class="text-success"><i class="mdi mdi-arrow-up"></i>2.95%</span>
-                                  </div>
-                                  <h3 class="mb-0 text-dark font-weight-bold">$ 92556</h3>
-                                  <canvas id="total-profit"></canvas>
-                                </div>
-                                <div class="wrapper pt-5">
-                                  <div class="text-wrapper d-flex align-items-center justify-content-between mb-2">
-                                    <p class="mb-0 text-dark">Expenses</p>
-                                    <span class="text-success"><i class="mdi mdi-arrow-up"></i>52.95%</span>
-                                  </div>
-                                  <h3 class="mb-4 text-dark font-weight-bold">$ 59565</h3>
-                                  <canvas id="total-expences"></canvas>
-                                </div>
-                              </div>
-                              <div class="col-lg-9 col-sm-8 grid-margin  grid-margin-lg-0">
-                                <div class="pl-0 pl-lg-4 ">
-                                  <div class="d-xl-flex justify-content-between align-items-center mb-2">
-                                    <div class="d-lg-flex align-items-center mb-lg-2 mb-xl-0">
-                                      <h3 class="text-dark font-weight-bold mr-2 mb-0">Devices sales</h3>
-                                      <h5 class="mb-0">( growth 62% )</h5>
-                                    </div>
-                                    <div class="d-lg-flex">
-                                      <p class="mr-2 mb-0">Timezone:</p>
-                                      <p class="text-dark font-weight-bold mb-0">GMT-0400 Eastern Delight Time</p>
-                                    </div>
-                                  </div>
-                                  <div class="graph-custom-legend clearfix" id="device-sales-legend"></div>
-                                  <canvas id="device-sales"></canvas>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-4 grid-margin stretch-card">
-                        <div class="card card-danger-gradient">
-                          <div class="card-body mb-4">
-                            <h4 class="card-title text-white">Account Retention</h4>
-                            <canvas id="account-retension"></canvas>
-                          </div>
-                          <div class="card-body bg-white pt-4">
-                            <div class="row pt-4">
-                              <div class="col-sm-6">
-                                <div class="text-center border-right border-md-0">
-                                  <h4>Conversion</h4>
-                                  <h1 class="text-dark font-weight-bold mb-md-3">$306</h1>
-                                </div>
-                              </div>
-                              <div class="col-sm-6">
-                                <div class="text-center">
-                                  <h4>Cancellation</h4>
-                                  <h1 class="text-dark font-weight-bold">$1,520</h1>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-8  grid-margin stretch-card">
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="d-xl-flex justify-content-between mb-2">
-                              <h4 class="card-title">Page views analytics</h4>
-                              <div class="graph-custom-legend primary-dot" id="pageViewAnalyticLengend"></div>
-                            </div>
-                            <canvas id="page-view-analytic"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
+                 
                   </div>
                 </div>
               </div>
@@ -560,8 +393,8 @@
           <footer class="footer">
             <div class="footer-inner-wraper">
               <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Vaccine Tracker 2021</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="index.jsp" target="_blank">Get Vaccinated</a></span>
               </div>
             </div>
           </footer>
