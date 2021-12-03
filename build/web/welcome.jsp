@@ -228,7 +228,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+                <span class="icon-bg"><i class="mdi mdi-hospital-building menu-icon"></i></span>
                 <span class="menu-title">Health Centre</span>
                 <i class="menu-arrow"></i>
               </a>
@@ -244,7 +244,7 @@
             
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
+                <span class="icon-bg"><i class="mdi mdi-briefcase menu-icon"></i></span>
                 <span class="menu-title">Vaccine inventory</span>
                 <i class="menu-arrow"></i>
               </a>
@@ -260,7 +260,7 @@
             </li>
               <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
+                <span class="icon-bg"><i class="mdi mdi-account-multiple-outline menu-icon"></i></span>
                 <span class="menu-title">Vaccine administration</span>
                 <i class="menu-arrow"></i>
               </a>
