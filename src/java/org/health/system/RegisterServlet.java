@@ -50,7 +50,7 @@ public class RegisterServlet extends HttpServlet {
             //create database model
             UserDatabase regUser = new UserDatabase(ConnectionPro.getConnection());
             if (regUser.saveUser(userModel)) {
-                response.sendRedirect("welcome.jsp");
+             response.sendRedirect("index.jsp");
             } else {
                 String errorMessage = "User Available";
                 HttpSession regSession = request.getSession();
