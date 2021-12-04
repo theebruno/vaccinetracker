@@ -20,75 +20,76 @@
           <listener-class>com.mycompany.TagLibListener</listener-class> 
       </listener>
     -->
-    <tag>  
-<name>insert</name>  
-<tag-class>org.health.health.addhealthcentre</tag-class>  
-<attribute>  
-<name>location</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-<attribute>  
-<name>name</name>  
-<required>true</required>
-<rtexprvalue>true</rtexprvalue>  
-</attribute>  
-  <attribute>  
-<name>patients</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-  <attribute>  
-<name>table</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-</tag> 
-
-<tag>  
-<name>select</name>  
-<tag-class>org.health.health.viewhealthcentre</tag-class>  
-  
-<attribute>  
-<name>table</name>  
-<required>true</required>  
-</attribute>  
-  
-</tag>  
-
-    <tag>  
-<name>insertvaccine</name>  
-<tag-class>org.health.vaccine.addvaccine</tag-class>  
-<attribute>  
-<name>doses</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-<attribute>  
-<name>name</name>  
-<required>true</required>
-<rtexprvalue>true</rtexprvalue>  
-</attribute>  
-  <attribute>  
-<name>vstatus</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-  <attribute>  
-<name>table</name>  
-<rtexprvalue>true</rtexprvalue>
-<required>true</required>  
-</attribute>  
-</tag>
-
-<tag>  
-<name>selectvaccine</name>  
-<tag-class>org.health.vaccine.viewvaccine</tag-class>  
-  
-<attribute>  
-<name>table</name>  
-<required>true</required>  
-</attribute>  
-  
-</tag>  
+  <tag>
+    <name>insert</name>
+    <tag-class>org.health.health.addhealthcentre</tag-class>
+    <attribute>
+      <name>location</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>patients</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>select</name>
+    <tag-class>org.health.health.viewhealthcentre</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>insertvaccine</name>
+    <tag-class>org.health.vaccine.addvaccine</tag-class>
+    <attribute>
+      <name>doses</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>vstatus</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>selectvaccine</name>
+    <tag-class>org.health.vaccine.viewvaccine</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>selectname</name>
+    <tag-class>org.health.vaccine.name</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
 </taglib>

@@ -344,6 +344,7 @@
                          <div class="form-group">
                         <label for="exampleSelectGender" >Name of Vaccine</label>
                         <select class="form-control" id="exampleSelectGender" name ="vaccine">
+                            <Vaccination:selectname table="inventory"/>
                           <option value="Bought">Bought</option>
                           <option value="Donation">Donation</option>
                         </select>
@@ -370,7 +371,7 @@
     </div>
   </div>
 </div>
-<Vaccination:selectname table="inventory"/>
+
                    <Vaccination:selectvaccine table="inventory"/>
                 
                   </div>

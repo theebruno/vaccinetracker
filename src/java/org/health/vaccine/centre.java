@@ -10,7 +10,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 import java.sql.*;  
 import static javax.servlet.jsp.tagext.Tag.SKIP_BODY;
   
-public class name extends TagSupport{  
+public class centre extends TagSupport{  
 private String table;  
   
  
