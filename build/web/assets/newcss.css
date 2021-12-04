@@ -1,0 +1,16 @@
+.invoice-head td {
+  padding: 0 8px;
+}
+.container {
+  padding-top:30px;
+}
+.invoice-body{
+  background-color:transparent;
+}
+.invoice-thank{
+  margin-top: 60px;
+  padding: 5px;
+}
+address{
+  margin-top:15px;
+}

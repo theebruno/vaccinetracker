@@ -52,6 +52,14 @@
       <required>true</required>
     </attribute>
   </tag>
+    <tag>
+    <name>vaccinename</name>
+    <tag-class>org.health.administration.vaccinename</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
   <tag>
     <name>insertvaccine</name>
     <tag-class>org.health.vaccine.addvaccine</tag-class>
@@ -99,5 +107,30 @@
       <name>table</name>
       <required>true</required>
     </attribute>
+  </tag>
+  <tag>
+    <name>distribute</name>
+    <tag-class>org.health.vaccine.distribute</tag-class>
+    <attribute>
+      <name>doses</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>centre</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>id</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    
   </tag>
 </taglib>

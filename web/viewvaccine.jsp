@@ -339,18 +339,18 @@
         </button>
       </div>
       <div class="modal-body">
-         <form class="forms-sample" method="post" action="two.jsp">
+         <form class="forms-sample" method="post" action="distribute.jsp">
                   
                          <div class="form-group">
                         <label for="exampleSelectGender" >Name of Vaccine</label>
-                        <select class="form-control" id="exampleSelectGender" name ="vaccine">
+                        <select class="form-control" id="exampleSelectGender" name ="id">
                             <Vaccination:selectname table="inventory"/>
                           
                         </select>
                       </div>
               <div class="form-group">
                         <label for="exampleSelectGender" >Health Centre</label>
-                        <select class="form-control" id="exampleSelectGender" name ="name">
+                        <select class="form-control" id="exampleSelectGender" name ="centre">
                         <Vaccination:selectcentre table="centres"/>
                         </select>
                       </div>

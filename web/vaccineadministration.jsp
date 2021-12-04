@@ -1,9 +1,4 @@
-<%-- 
-    Document   : welcome
-    Created on : Jan 19, 2020, 10:26:06 PM
-    Author     : almam
---%>
-
+<%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("logUser");
@@ -235,7 +230,7 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addhealthcentre.jsp">Add</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewhealthcentre.jsp">View</a></li>
                   
                 </ul>
               </div>
@@ -251,7 +246,7 @@
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addvaccine.jsp"> Add </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewvaccine.jsp>View</a></li>
                   
                 </ul>
               </div>
@@ -323,27 +318,30 @@
                   <div class="card-body">
                     
                   
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="post" action="administration.jsp">
+                             <div class="form-group">
+                        <label for="exampleSelectGender">Name of Vaccine</label>
+                        <select class="form-control" id="exampleSelectGender" name="vaccine">
+                          <Vaccination:vaccinename table="inventory"/>
+                        </select>
+                      </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label for="exampleInputName1">Name Of Person</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="person">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">NIN number</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="NIN Number">
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="NIN Number" name="nin">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Location</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Location">
+                        <label for="exampleInputEmail3">Health centre</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Health centre" name="centre">
                       </div>
-                          <div class="form-group">
-                        <label for="exampleInputEmail3">Date</label>
-                        <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Date">
+                      <div class="form-group">
+                              <label for="exampleInputEmail3">Next Dose</label>
+                        <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Leave blank if their is no next dose" name="date">
                       </div>
-                          <div class="form-group">
-                        <label for="exampleInputEmail3">Vaccine Adminitered</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter vaccine">
-                      </div>
+                  
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
                       <button class="btn btn-light">Cancel</button>
                     </form>
