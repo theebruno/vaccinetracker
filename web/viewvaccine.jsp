@@ -321,8 +321,56 @@
                   
        
                 <div class="card">
-                  <div class="card-body">
                     
+                  <div class="card-body">
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModalCenter">
+  Distribute Vaccine
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Distribute Vaccine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form class="forms-sample" method="post" action="two.jsp">
+                  
+                         <div class="form-group">
+                        <label for="exampleSelectGender" >Name of Vaccine</label>
+                        <select class="form-control" id="exampleSelectGender" name ="vaccine">
+                          <option value="Bought">Bought</option>
+                          <option value="Donation">Donation</option>
+                        </select>
+                      </div>
+              <div class="form-group">
+                        <label for="exampleSelectGender" >Health Centre</label>
+                        <select class="form-control" id="exampleSelectGender" name ="name">
+                          <option value="Bought">Bought</option>
+                          <option value="Donation">Donation</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Number of Doses Received</label>
+                        <input type="number" class="form-control" id="exampleInputEmail3" name="doses" placeholder="Number">
+                      </div>
+                      
+                    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Save changes</button>
+      </div>
+                      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<Vaccination:selectname table="inventory"/>
                    <Vaccination:selectvaccine table="inventory"/>
                 
                   </div>
