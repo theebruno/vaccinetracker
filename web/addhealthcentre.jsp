@@ -45,6 +45,10 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
   <body>
+ 
+      
+      
+      
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -213,7 +217,7 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-           <li class="nav-item nav-category">Main</li>
+             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
               <a class="nav-link" href="welcome.jsp">
                 <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
@@ -229,7 +233,7 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addhealthcentre.jsp">Add</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="viewhealthcentre">View</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewhealthcentre.jsp">View</a></li>
                   
                 </ul>
               </div>
@@ -245,7 +249,7 @@
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addvaccine.jsp"> Add </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="viewvaccine.jsp"> View </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewvaccine"> View </a></li>
                   
                 </ul>
               </div>
@@ -279,7 +283,6 @@
               </div>
             </li>
          
-        
       
             <li class="nav-item sidebar-user-actions">
               <div class="sidebar-user-menu">
@@ -301,7 +304,7 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Add Vaccine</h3>
+              <h3 class="page-title"> Add Health Centres</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Health Centre</a></li>
@@ -309,32 +312,32 @@
                 </ol>
               </nav>
             </div>
+   
             <div class="row">
-           
+          
              
               <div class="col-12 grid-margin stretch-card">
+                  
+       
                 <div class="card">
                   <div class="card-body">
                     
                   
-                    <form class="forms-sample" method="post" action="two.jsp">
+                    <form class="forms-sample" method="post" action="one.jsp">
                       <div class="form-group">
-                        <label for="exampleInputName1">Name Of Vaccine</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Number of Doses Received</label>
-                        <input type="number" class="form-control" id="exampleInputEmail3" name="doses" placeholder="Number">
+                        <label for="exampleInputEmail3">Location</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" name="location" placeholder="Location">
                       </div>
-                   
-                         <div class="form-group">
-                        <label for="exampleSelectGender" >Status</label>
-                        <select class="form-control" id="exampleSelectGender" name ="vstatus">
-                          <option value="Bought">Bought</option>
-                          <option value="Donation">Donation</option>
-                        </select>
+                     <div class="form-group">
+                        <label for="exampleInputEmail3">Number of Patients</label>
+                        <input type="number" class="form-control" id="exampleInputEmail3" name="patients" placeholder="Number">
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      
+                      <button type="submit" class="btn btn-primary mr-2" value="submit">Submit</button>
                       <button class="btn btn-light">Cancel</button>
                     </form>
                   </div>

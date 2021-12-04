@@ -1,9 +1,4 @@
-<%-- 
-    Document   : welcome
-    Created on : Jan 19, 2020, 10:26:06 PM
-    Author     : almam
---%>
-
+<%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("logUser");
@@ -51,6 +46,10 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
   <body>
+ 
+      
+      
+      
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -234,8 +233,8 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="addhealthcentre.jsps">Add</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="addhealthcentre.jsp">Add</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewhealthcentre.jsp">View</a></li>
                   
                 </ul>
               </div>
@@ -251,7 +250,7 @@
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addvaccine.jsp"> Add </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewvaccine.jsp">View</a></li>
                   
                 </ul>
               </div>
@@ -306,36 +305,26 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Add Health Centres</h3>
+              <h3 class="page-title"> View Health Centres</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Health Centre</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Add</li>
+                  <li class="breadcrumb-item active" aria-current="page">View</li>
                 </ol>
               </nav>
             </div>
+       
             <div class="row">
-           
-             
+          
+            
               <div class="col-12 grid-margin stretch-card">
+                  
+       
                 <div class="card">
                   <div class="card-body">
                     
-                  
-                    <form class="forms-sample">
-                      <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3">Location</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Location">
-                      </div>
-                     
-                      
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
-                    </form>
+                   <Vaccination:selectvaccine table="inventory"/>
+                
                   </div>
                 </div>
               </div>

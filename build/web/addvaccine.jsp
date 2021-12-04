@@ -1,9 +1,3 @@
-<%-- 
-    Document   : welcome
-    Created on : Jan 19, 2020, 10:26:06 PM
-    Author     : almam
---%>
-
 <%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) session.getAttribute("logUser");
@@ -235,7 +229,7 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addhealthcentre.jsp">Add</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewhealthcentre">View</a></li>
                   
                 </ul>
               </div>
@@ -251,7 +245,7 @@
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="addvaccine.jsp"> Add </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="viewvaccine.jsp"> View </a></li>
                   
                 </ul>
               </div>
@@ -323,24 +317,21 @@
                   <div class="card-body">
                     
                   
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="post" action="two.jsp">
                       <div class="form-group">
                         <label for="exampleInputName1">Name Of Vaccine</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Number of Doses Received</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Location">
+                        <input type="number" class="form-control" id="exampleInputEmail3" name="doses" placeholder="Number">
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail3"></label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Location">
-                      </div>
+                   
                          <div class="form-group">
-                        <label for="exampleSelectGender">Status</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Bought</option>
-                          <option>Donation</option>
+                        <label for="exampleSelectGender" >Status</label>
+                        <select class="form-control" id="exampleSelectGender" name ="vstatus">
+                          <option value="Bought">Bought</option>
+                          <option value="Donation">Donation</option>
                         </select>
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
