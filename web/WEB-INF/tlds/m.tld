@@ -92,4 +92,12 @@
       <required>true</required>
     </attribute>
   </tag>
+   <tag>
+    <name>selectcentre</name>
+    <tag-class>org.health.vaccine.centre</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
 </taglib>

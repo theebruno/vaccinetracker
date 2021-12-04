@@ -345,15 +345,13 @@
                         <label for="exampleSelectGender" >Name of Vaccine</label>
                         <select class="form-control" id="exampleSelectGender" name ="vaccine">
                             <Vaccination:selectname table="inventory"/>
-                          <option value="Bought">Bought</option>
-                          <option value="Donation">Donation</option>
+                          
                         </select>
                       </div>
               <div class="form-group">
                         <label for="exampleSelectGender" >Health Centre</label>
                         <select class="form-control" id="exampleSelectGender" name ="name">
-                          <option value="Bought">Bought</option>
-                          <option value="Donation">Donation</option>
+                        <Vaccination:selectcentre table="centres"/>
                         </select>
                       </div>
                       <div class="form-group">
@@ -364,7 +362,7 @@
                     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" >Save changes</button>
+        <button type="submit" class="btn btn-primary" >Distribute</button>
       </div>
                       </form>
       </div>
