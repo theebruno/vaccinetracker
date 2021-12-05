@@ -1,10 +1,12 @@
-<%-- 
-    Document   : registration
-    Created on : Jan 10, 2020, 2:43:53 PM
-    Author     : almam
---%>
-
+<%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
+<%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% User user = (User) session.getAttribute("logUser");
+    if(session.getAttribute("logUser") == null){
+        response.sendRedirect("index.jsp");
+    }
+     
+%>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,16 +54,11 @@
                   <div class="form-group">
                     <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <div class="mb-4">
-                    <div class="form-check">
-                      <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> I agree to all Terms & Conditions </label>
-                    </div>
-                  </div>
+                
                   <div class="mt-3">
-                    <button  type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Register">SIGN UP</button>
+                    <button  type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Register">Register User</button>
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Already have an account? <a href="index.jsp" class="text-primary">Login</a>
+                  <div class="text-center mt-4 font-weight-light">  <a href="welcome.jsp" class="text-primary">Back</a>
                   </div>
                 </form>
               </div>

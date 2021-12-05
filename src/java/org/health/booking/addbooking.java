@@ -4,84 +4,52 @@
  */
 package org.health.booking;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- *
- * @author BRUNO
- */
-@WebServlet(name = "addbooking", urlPatterns = {"/addbooking"})
-public class addbooking extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet addbooking</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet addbooking at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+import javax.servlet.jsp.JspException;  
+import javax.servlet.jsp.JspWriter;  
+import javax.servlet.jsp.tagext.TagSupport;  
+import java.sql.*;  
+import static javax.servlet.jsp.tagext.Tag.SKIP_BODY;
+  
+public class addbooking extends TagSupport{  
+private String provider;
+private String table;
+private String centre;
+private String vaccine;  
+private String date;
+public void setProvider(String provider) {  
+    this.provider = provider;  
+} 
+public void setTable(String table) {  
+    this.table = table;  
+} 
+public void setCentre(String centre) {  
+    this.centre = centre;  
+} 
+public void setVaccine(String vaccine) {  
+    this.vaccine = vaccine;  
 }
+  
+public void setDate(String date) {  
+    this.date = date;  
+} 
+public int doStartTag()throws JspException{  
+    int status=0;  
+    JspWriter out=pageContext.getOut();  
+    try{   
+        Class.forName("com.mysql.cj.jdbc.Driver");  
+        Connection con=DriverManager.getConnection(  
+                 "jdbc:mysql://localhost:3306/vaccine","root","");  
+        PreparedStatement ps=con.prepareStatement(  
+"insert into booking(provider,date,vaccine,centre) values(?,?,?,?)");  
+        ps.setString(1,provider);  
+        ps.setString(2,date);  
+        ps.setString(3,vaccine);  
+        ps.setString(4,centre); 
+     
+        status=ps.executeUpdate();  
+        
+//        con.close();  
+    }catch(Exception e){System.out.println(e);}  
+    return SKIP_BODY;  
+}  
+}  

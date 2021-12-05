@@ -1,6 +1,7 @@
 <%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -164,47 +165,26 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title">Add booking</h3>
+              <h3 class="page-title"> View Bookings</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Booking and Advisory</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Add Booking</li>
+                  <li class="breadcrumb-item active" aria-current="page">View</li>
                 </ol>
               </nav>
             </div>
+       
             <div class="row">
-           
-             
+          
+            
               <div class="col-12 grid-margin stretch-card">
+                  
+       
                 <div class="card">
                   <div class="card-body">
                     
-                  
-                    <form class="forms-sample" method="post" action="addbooking.jsp">
-                      <div class="form-group">
-                        <label for="exampleInputName1">Name Of Provider</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="provider" required="required">
-                      </div>
-                     
-                     <div class="form-group">
-                        <label for="exampleSelectGender">Health Centre</label>
-                        <select class="form-control" id="exampleSelectGender" name="centre">
-                          <Vaccination:vaccinename table="centres"/>
-                        </select>
-                      </div>
-                          <div class="form-group">
-                        <label for="exampleInputEmail3">Date</label>
-                        <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Date" name="date" required="required">
-                      </div>
-                          <div class="form-group">
-                        <label for="exampleSelectGender">Name of Vaccine</label>
-                        <select class="form-control" id="exampleSelectGender" name="vaccine">
-                          <Vaccination:vaccinename table="inventory"/>
-                        </select>
-                      </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
-                    </form>
+                   <Vaccination:vaccinations table="vaccinated"/>
+                
                   </div>
                 </div>
               </div>

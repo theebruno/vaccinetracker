@@ -61,6 +61,14 @@
     </attribute>
   </tag>
   <tag>
+    <name>selectbooking</name>
+    <tag-class>org.health.booking.viewbooking</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
     <name>insertvaccine</name>
     <tag-class>org.health.vaccine.addvaccine</tag-class>
     <attribute>
@@ -100,12 +108,38 @@
       <required>true</required>
     </attribute>
   </tag>
+  <tag>
+    <name>vaccinations</name>
+    <tag-class>org.health.administration.vaccinations</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
    <tag>
     <name>selectcentre</name>
     <tag-class>org.health.vaccine.centre</tag-class>
     <attribute>
       <name>table</name>
       <required>true</required>
+    </attribute>
+  </tag>
+   <tag>
+    <name>login</name>
+    <tag-class>org.health.system.signin</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>email</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>password</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
     </attribute>
   </tag>
   <tag>
@@ -128,6 +162,78 @@
     </attribute>
     <attribute>
       <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    
+  </tag>
+   <tag>
+    <name>administration</name>
+    <tag-class>org.health.administration.testadmin</tag-class>
+    <attribute>
+      <name>vaccine</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    
+      <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>email</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>person</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>nin</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>centre</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+     <attribute>
+      <name>date</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    
+  </tag>
+  <tag>
+    <name>booking</name>
+    <tag-class>org.health.booking.addbooking</tag-class>
+    <attribute>
+      <name>vaccine</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+      <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>provider</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>centre</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+   
+     <attribute>
+      <name>date</name>
       <rtexprvalue>true</rtexprvalue>
       <required>true</required>
     </attribute>
