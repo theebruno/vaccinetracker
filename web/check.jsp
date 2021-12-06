@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <%@ page import = "java.io.*,java.util.*" %>
@@ -36,11 +35,11 @@
                 <div class="brand-logo">
                   <img style="width:50px;" src="assets/images/favicon.png">
                 </div>
-                <h4>Thanks For Booking</h4>
-                <h6 class="font-weight-light">STAY SAFE!</h6>
+                <h4>Thanks For Getting Your Dose</h4>
+                <h6 class="font-weight-light">Next Dose is on</h6>
                 <form class="pt-3" method="post" action="LoginServlet">
                   <div class="form-group">
-                   <Vaccination:booking  table="booking" provider="${param.provider}" centre="${param.centre}" vaccine="${param.vaccine}" date="${param.date}"/>
+                    <Vaccination:check table="vaccinated" nin="${param.nin}"/> 
                   </div>
                   
 

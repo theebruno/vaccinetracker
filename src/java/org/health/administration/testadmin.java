@@ -53,7 +53,7 @@ public int doStartTag()throws JspException{
         if(rs.next()){  
            int status2 =0;
                newdoses= rs.getInt(3)-1;  
-            out.write("New doses are"+newdoses);
+           
             Connection con1=DriverManager.getConnection(  
                  "jdbc:mysql://localhost:3306/vaccine","root","");
              PreparedStatement pt=con1.prepareStatement("update inventory set doses=? where name=?");   

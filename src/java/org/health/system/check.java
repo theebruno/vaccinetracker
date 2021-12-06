@@ -2,20 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package org.health.health;
+package org.health.system;
 
 import javax.servlet.jsp.JspException;  
 import javax.servlet.jsp.JspWriter;  
 import javax.servlet.jsp.tagext.TagSupport;  
 import java.sql.*;  
+import static javax.servlet.jsp.tagext.Tag.SKIP_BODY;
   
-public class viewhealthcentre extends TagSupport{  
+public class check extends TagSupport{  
 private String table;  
-  
+private String nin;    
  
 public void setTable(String table) {  
     this.table = table;  
-}  
+} 
+public void setNin(String nin) {  
+    this.nin = nin;  
+}
   
 public int doStartTag()throws JspException{  
     JspWriter out=pageContext.getOut();  
@@ -23,34 +27,18 @@ public int doStartTag()throws JspException{
         Class.forName("com.mysql.cj.jdbc.Driver");  
         Connection con=DriverManager.getConnection(  
                  "jdbc:mysql://localhost:3306/vaccine","root","");   
-        PreparedStatement ps=con.prepareStatement("select * from "+table+"");  
-       
+        PreparedStatement ps=con.prepareStatement("select * from "+table+" where nin=?");  
+       ps.setString(1,nin);
         ResultSet rs=ps.executeQuery();  
         if(rs!=null){  
-        ResultSetMetaData rsmd=rs.getMetaData();  
-        int totalcols=rsmd.getColumnCount();  
-        //column name  
-        out.write("<table  class='table table-striped'> ");  
-        out.write(" <thead><tr>");  
-        for(int i=1;i<=totalcols;i++){  
-            out.write("<th>"+rsmd.getColumnName(i)+"</th>");  
-        }  
-        out.write("</tr> </thead>");  
-        //column value  
-           out.write("<tbody>");   
+         
         if(rs.next()){  
-           while(rs.next()) {
-    out.println("<tr>");
-    out.println("<td>"+rs.getString(1) + "</td>");
-    out.println("<td>"+rs.getString(2) + "</td>");
-    out.println("<td>"+rs.getString(3) + "</td>");
-    out.println("<td>"+rs.getString(4) + "</td>");
-     out.println("<td>"+rs.getString(5) + "</td>");
-        out.println("<td>"+rs.getString(6) + "</td>");
-    out.println("</tr>");
+           
+     
+    out.println("<input type=\"text\" value=\""+rs.getString(6)+"\" name=\"email\" class\"form-control form-control-lg\" id=\"exampleInputEmail1\">");
 
-   } 
-              out.write("</tbody>"); 
+   
+             
                   
         }else{  
             out.write("No records found!");  

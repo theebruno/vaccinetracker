@@ -144,7 +144,7 @@
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="booking.jsp"> Book </a></li>
+             
                   <li class="nav-item"> <a class="nav-link" href="viewbooking.jsp"> View </a></li>
                  
                 </ul>
@@ -176,44 +176,37 @@
                       <div class="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body text-center">
-                            <h5 class="mb-2 text-dark font-weight-normal">Orders</h5>
-                            <h2 class="mb-4 text-dark font-weight-bold">932.00</h2>
-                            <div class="dashboard-progress dashboard-progress-1 d-flex align-items-center justify-content-center item-parent"><i class="mdi mdi-lightbulb icon-md absolute-center text-dark"></i></div>
-                            <p class="mt-4 mb-0">Completed</p>
-                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">5443</h3>
+                            <h5 class="mb-2 text-dark font-weight-normal">Vaccination Centres</h5>
+                            <h2 class="mb-4 text-dark font-weight-bold"><Vaccination:countcentres table="centres"/></h2>
+                            <<div class="dashboard-progress dashboard-progress-4 d-flex align-items-center justify-content-center item-parent"><canvas width="125" height="125"></canvas><i style=" font-size: 6rem;" class="mdi mdi-hospital-building icon-md absolute-center text-success"></i></div>
+                            
                           </div>
                         </div>
                       </div>
                       <div class="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body text-center">
-                            <h5 class="mb-2 text-dark font-weight-normal">Unique Visitors</h5>
-                            <h2 class="mb-4 text-dark font-weight-bold">756,00</h2>
-                            <div class="dashboard-progress dashboard-progress-2 d-flex align-items-center justify-content-center item-parent"><i class="mdi mdi-account-circle icon-md absolute-center text-dark"></i></div>
-                            <p class="mt-4 mb-0">Increased since yesterday</p>
-                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">50%</h3>
+                            <h5 class="mb-2 text-dark font-weight-normal">Types of Vaccines</h5>
+                            <h2 class="mb-4 text-dark font-weight-bold"><Vaccination:countvaccinetypes table="inventory"/></h2>
+                           <div class="dashboard-progress dashboard-progress-4 d-flex align-items-center justify-content-center item-parent"><canvas width="125" height="125"></canvas><i style=" font-size: 6rem;" class="mdi mdi-group icon-md absolute-center text-warning"></i></div>
                           </div>
                         </div>
                       </div>
                       <div class="col-xl-3  col-lg-6 col-sm-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body text-center">
-                            <h5 class="mb-2 text-dark font-weight-normal">Impressions</h5>
-                            <h2 class="mb-4 text-dark font-weight-bold">100,38</h2>
-                            <div class="dashboard-progress dashboard-progress-3 d-flex align-items-center justify-content-center item-parent"><i class="mdi mdi-eye icon-md absolute-center text-dark"></i></div>
-                            <p class="mt-4 mb-0">Increased since yesterday</p>
-                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">35%</h3>
+                            <h5 class="mb-2 text-dark font-weight-normal">Vaccinated Patients</h5>
+                            <h2 class="mb-4 text-dark font-weight-bold"><Vaccination:countvaccinated table="vaccinated"/></h2>
+                            <div class="dashboard-progress dashboard-progress-4 d-flex align-items-center justify-content-center item-parent"><canvas width="125" height="125"></canvas><i style=" font-size: 6rem;" class="mdi mdi-account-multiple-outline icon-md absolute-center text-primary"></i></div>
                           </div>
                         </div>
                       </div>
                       <div class="col-xl-3 col-lg-6 col-sm-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body text-center">
-                            <h5 class="mb-2 text-dark font-weight-normal">Followers</h5>
-                            <h2 class="mb-4 text-dark font-weight-bold">4250k</h2>
-                            <div class="dashboard-progress dashboard-progress-4 d-flex align-items-center justify-content-center item-parent"><i class="mdi mdi-cube icon-md absolute-center text-dark"></i></div>
-                            <p class="mt-4 mb-0">Decreased since yesterday</p>
-                            <h3 class="mb-0 font-weight-bold mt-2 text-dark">25%</h3>
+                            <h5 class="mb-2 text-dark font-weight-normal">Bookings</h5>
+                            <h2 class="mb-4 text-dark font-weight-bold"><Vaccination:countbookings table="booking"/></h2>
+                          <div class="dashboard-progress dashboard-progress-4 d-flex align-items-center justify-content-center item-parent"><canvas width="125" height="125"></canvas><i style=" font-size: 6rem;" class="mdi mdi-calendar-check  icon-md absolute-center text-danger"></i></div>
                           </div>
                         </div>
                       </div>

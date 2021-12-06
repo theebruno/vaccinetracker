@@ -31,7 +31,7 @@ public int doStartTag()throws JspException{
         ResultSetMetaData rsmd=rs.getMetaData();  
         int totalcols=rsmd.getColumnCount();  
         //column name  
-        out.write("<table  class='table table-striped'> ");  
+        out.write("<table  class='table table-striped table-responsive'> ");  
         out.write(" <thead><tr>");  
         for(int i=1;i<=totalcols;i++){  
             out.write("<th>"+rsmd.getColumnName(i)+"</th>");  
@@ -49,6 +49,7 @@ public int doStartTag()throws JspException{
     out.println("<td>"+rs.getString(5) + "</td>");
     out.println("<td>"+rs.getString(6) + "</td>");
     out.println("<td>"+rs.getString(7) + "</td>");
+    out.println("<td>"+rs.getString(8) + "</td>");
     out.println("</tr>");
 
    } 

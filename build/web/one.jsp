@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>${param.name} has been created successfully</h1>
-        <Vaccination:insert table="centres" location="${param.location}" name="${param.name}" patients="${param.patients}"/>
+        <Vaccination:insert table="centres" location="${param.location}" name="${param.name}" patients="${param.patients}" email="${param.email}"/>
         <%
          // New location to be redirected
 

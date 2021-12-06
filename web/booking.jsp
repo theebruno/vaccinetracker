@@ -142,7 +142,7 @@
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="booking.jsp"> Book </a></li>
+              
                   <li class="nav-item"> <a class="nav-link" href="viewbooking.jsp"> View </a></li>
                  
                 </ul>

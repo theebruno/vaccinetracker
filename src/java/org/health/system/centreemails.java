@@ -1,23 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package org.health.system;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author almam
+ * @author BRUNO
  */
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "centreemails", urlPatterns = {"/centreemails"})
+public class centreemails extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,27 +36,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet centreemails</title>");            
             out.println("</head>");
             out.println("<body>");
-            //feth data from login form
-            
-            String logemail = request.getParameter("email");
-            String logpass = request.getParameter("password");
-            
-            UserDatabase db =  new UserDatabase(ConnectionPro.getConnection());
-            User user = db.logUser(logemail, logpass);
-            
-            if(user!=null){
-                
-                HttpSession session = request.getSession();
-                session.setAttribute("logUser", user);
-                session.setAttribute("emaildata",getServletConfig().getInitParameter("emails"));
-                response.sendRedirect("welcome.jsp");
-            }else{
-                out.println("user not found");
-            }
-            
+            out.println("<h1>Servlet centreemails at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

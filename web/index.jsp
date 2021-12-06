@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +25,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
   <body>
+      
      <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">
@@ -51,17 +53,88 @@
                     </div>
                     <a href="#" class="auth-link text-black"></a>
                   </div>
+                      </form>
                   <div class="mb-2">
-                    <button type="button" class="btn btn-block btn-success auth-form-btn">
+                    <button type="button" class="btn btn-block btn-success auth-form-btn" data-toggle="modal" data-target="#exampleModalCent">
                       <i class="mdi mdi-hospital-marker mr-2"></i>Get Vaccinated Now </button>
                   </div>
+                    <!-- Modal -->
+<div class="modal fade" id="exampleModalCent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Book Vaccine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form class="forms-sample" method="post" action="addbooking.jsp">
+                  
+                  <div class="form-group">
+                        <label for="exampleInputName1">Name Of Recipient</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="provider" required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Name of Vaccine</label>
+                        <select class="form-control" id="exampleSelectGender" name="vaccine">
+                          <Vaccination:vaccinename table="inventory"/>
+                        </select>
+                      </div>
+                     <div class="form-group">
+                        <label for="exampleSelectGender">Health Centre</label>
+                        <select class="form-control" id="exampleSelectGender" name="centre">
+                          <Vaccination:vaccinename table="centres"/>
+                        </select>
+                      </div>
+                          <div class="form-group">
+                        <label for="exampleInputEmail3">Date</label>
+                        <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Date" name="date" required="required">
+                      </div>
+                         
+                    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Book</button>
+      </div>
+                      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Check next dose Date</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form class="forms-sample" method="post" action="check.jsp">
+                  
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">NIN</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" name="nin" placeholder="Enter Your NIN">
+                      </div>
+                      
+                    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Check Date</button>
+      </div>
+                      </form>
+      </div>
+    </div>
+  </div>
+</div>
                     <div class="mb-2">
-                    <button type="button" class="btn btn-block btn-danger auth-form-btn">
+                    <button type="button" class="btn btn-block btn-danger auth-form-btn" data-toggle="modal" data-target="#exampleModalCenter">
                       <i class="mdi mdi-alert mr-2"></i>Check Next Dose Date </button>
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="registration.jsp" class="text-primary">Create</a>
-                  </div>
-                </form>
+                  
+              
               </div>
             </div>
           </div>

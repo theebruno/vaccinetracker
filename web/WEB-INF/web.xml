@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+        <servlet-name>centreemails</servlet-name>
+        <servlet-class>org.health.system.centreemails</servlet-class>
+        
+        <init-param>
+            <param-name>emails</param-name>
+            <param-value>brunomugire@gmail.com,rackara00anderson@gmail.com,blairgb12@gmail.com</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>org.health.system.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mail</servlet-name>
+        <servlet-class>org.health.system.centreemails</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>

@@ -40,14 +40,14 @@ public int doStartTag()throws JspException{
         Connection con=DriverManager.getConnection(  
                  "jdbc:mysql://localhost:3306/vaccine","root","");  
         PreparedStatement ps=con.prepareStatement(  
-"insert into booking(provider,date,vaccine,centre) values(?,?,?,?)");  
+       "insert into booking(recipient,date,vaccine,centre) values(?,?,?,?)");  
         ps.setString(1,provider);  
         ps.setString(2,date);  
         ps.setString(3,vaccine);  
         ps.setString(4,centre); 
      
         status=ps.executeUpdate();  
-        
+        out.println("You have booked succesfully");
 //        con.close();  
     }catch(Exception e){System.out.println(e);}  
     return SKIP_BODY;  

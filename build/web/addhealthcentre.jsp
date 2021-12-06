@@ -143,7 +143,7 @@
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="booking.jsp"> Book </a></li>
+                 
                   <li class="nav-item"> <a class="nav-link" href="viewbooking.jsp"> View </a></li>
                  
                 </ul>
@@ -187,17 +187,20 @@
                     <form class="forms-sample" method="post" action="one.jsp">
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Name">
+                        <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Name" required>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Location</label>
-                        <input type="text" class="form-control" id="exampleInputEmail3" name="location" placeholder="Location">
+                        <input type="text" class="form-control" id="exampleInputEmail3" name="location" placeholder="Location" required>
                       </div>
                      <div class="form-group">
                         <label for="exampleInputEmail3">Number of Patients</label>
-                        <input type="number" class="form-control" id="exampleInputEmail3" name="patients" placeholder="Number">
+                        <input type="number" class="form-control" id="exampleInputEmail3" name="patients" placeholder="Number" required>
                       </div>
-                      
+                       <div class="form-group">
+                        <label for="exampleInputEmail3">Health Centre Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" name="email" placeholder="Email" required>
+                      </div>
                       <button type="submit" class="btn btn-primary mr-2" value="submit">Submit</button>
                       <button class="btn btn-light">Cancel</button>
                     </form>

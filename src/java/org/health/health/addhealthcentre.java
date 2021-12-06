@@ -11,6 +11,7 @@ import java.sql.*;
   
 public class addhealthcentre extends TagSupport{  
 private String name;
+private String email;
 private String table;
 private String location;  
 private int patients;
@@ -27,6 +28,9 @@ public void setPatients(int patients) {
 public void setTable(String table) {  
     this.table = table;  
 } 
+public void setEmail(String email) {  
+    this.email = email;  
+} 
 public int doStartTag()throws JspException{  
     int status=0;  
     JspWriter out=pageContext.getOut();  
@@ -35,11 +39,12 @@ public int doStartTag()throws JspException{
         Connection con=DriverManager.getConnection(  
                  "jdbc:mysql://localhost:3306/vaccine","root","");  
         PreparedStatement ps=con.prepareStatement(  
-"insert into centres(name,location,patients) values(?,?,?)");  
+"insert into centres(name,location,patients,doses,email) values(?,?,?,?,?)");  
         ps.setString(1,name);  
         ps.setString(2,location);  
         ps.setInt(3,patients);  
-     
+        ps.setInt(4,0); 
+         ps.setString(5,email);  
         status=ps.executeUpdate();  
 //        con.close();  
     }catch(Exception e){System.out.println(e);}  

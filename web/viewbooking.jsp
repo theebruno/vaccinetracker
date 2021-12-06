@@ -135,14 +135,14 @@
               </div>
             </li>
               <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="aut">
+              <a class="nav-link" data-toggle="collapse" href="#aut" aria-expanded="false" aria-controls="aut">
                 <span class="icon-bg"><i class="mdi mdi-calendar-check menu-icon"></i></span>
                 <span class="menu-title">Booking and Advisory</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="booking.jsp"> Book </a></li>
+             
                   <li class="nav-item"> <a class="nav-link" href="viewbooking.jsp"> View </a></li>
                  
                 </ul>

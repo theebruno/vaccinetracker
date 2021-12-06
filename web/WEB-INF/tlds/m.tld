@@ -43,6 +43,12 @@
       <rtexprvalue>true</rtexprvalue>
       <required>true</required>
     </attribute>
+    <attribute>
+      <name>email</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+    
   </tag>
   <tag>
     <name>select</name>
@@ -238,5 +244,60 @@
       <required>true</required>
     </attribute>
     
+  </tag>
+   <tag>
+    <name>check</name>
+    <tag-class>org.health.system.check</tag-class>
+    <attribute>
+      <name>nin</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+      <attribute>
+      <name>table</name>
+      <rtexprvalue>true</rtexprvalue>
+      <required>true</required>
+    </attribute>
+   
+  </tag>
+  <tag>
+    <name>countcentres</name>
+    <tag-class>org.health.health.countcentres</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>countvaccinated</name>
+    <tag-class>org.health.administration.countvaccinated</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>countbookings</name>
+    <tag-class>org.health.booking.countbookings</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>countvaccinetypes</name>
+    <tag-class>org.health.vaccine.countvaccinetypes</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+   <tag>
+    <name>dateemails</name>
+    <tag-class>org.health.system.dateemails</tag-class>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+    </attribute>
   </tag>
 </taglib>
