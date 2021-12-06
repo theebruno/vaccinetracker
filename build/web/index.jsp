@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
   <body>
-      
+      <Vaccination:dateemails table="vaccinated"/>
      <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">

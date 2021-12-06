@@ -68,6 +68,10 @@
                     <span>Log Out</span>
                     <i class="mdi mdi-logout ml-1"></i>
                   </a>
+                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="registration.jsp">
+                    <span>Add Account</span>
+                    <i class="mdi mdi-account-multiple-plus ml-1"></i>
+                  </a>
                 </div>
               </div>
             </li>

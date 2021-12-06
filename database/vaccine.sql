@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2021 at 09:47 AM
+-- Generation Time: Dec 06, 2021 at 05:42 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -67,14 +67,7 @@ CREATE TABLE `centres` (
 --
 
 INSERT INTO `centres` (`id`, `name`, `location`, `patients`, `doses`, `email`) VALUES
-(10, 'Mulago', 'Kampala', 464748484, 0, ''),
-(11, 'Case', 'Buganda road', 747474, 0, ''),
-(12, 'St Luke', 'Gulu', 3383838, 0, ''),
-(13, 'Maternal', 'Kamwokya', 667474, 0, ''),
-(14, 'name', 'location', 2, 0, ''),
-(15, 'name', 'location', 3, 0, ''),
-(16, 'Martinelli', 'Ntinda', 536, 3000, ''),
-(17, 'Bruno Mugire', 'bkk', 8999, 0, 'K@gmail.com'),
+(17, 'Bazzy', 'Kabowa', 89678, 8899999, 'Kik@gmail.com'),
 (18, 'kkk', 'kkk', 898, 700, 'K@gmail.com'),
 (19, 'gfgf', 'hdhf', 99, 13800, 'dsd@hh.com');
 
@@ -96,7 +89,6 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`id`, `name`, `doses`, `status`) VALUES
-(1, '', 34566, 'Bought'),
 (2, 'Pit', 48470, 'Donation'),
 (4, 'phifzer', 997296, 'Donation');
 
@@ -123,7 +115,8 @@ INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES
 (3, 'brunodonatelo@gmail.com', 'admin', 'admin'),
 (4, 'bb@gajaj.cpom', 'bbb', 'dhdjdj'),
 (6, '', '', ''),
-(7, 'hehh@hshs.com', 'hehhe', '152626');
+(7, 'hehh@hshs.com', 'hehhe', '152626'),
+(8, 'doe@doe.com', 'Tom Doe', 'doe');
 
 -- --------------------------------------------------------
 
@@ -211,7 +204,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vaccinated`
