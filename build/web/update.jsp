@@ -69,10 +69,6 @@
                     <span>Log Out</span>
                     <i class="mdi mdi-logout ml-1"></i>
                   </a>
-                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="registration.jsp">
-                    <span>Add Account</span>
-                    <i class="mdi mdi-account-multiple-plus ml-1"></i>
-                  </a>
                 </div>
               </div>
             </li>
@@ -147,7 +143,7 @@
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  
+                 
                   <li class="nav-item"> <a class="nav-link" href="viewbooking.jsp"> View </a></li>
                  
                 </ul>
@@ -169,26 +165,49 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> View Vaccinations</h3>
+              <h3 class="page-title"> Edit health centre:  ${param.name}</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Vaccine Administration</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">View</li>
+                  <li class="breadcrumb-item"><a href="#">Health Centre</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Edit</li>
                 </ol>
               </nav>
             </div>
-       
+   
             <div class="row">
           
-            
+             
               <div class="col-12 grid-margin stretch-card">
                   
        
                 <div class="card">
                   <div class="card-body">
                     
-                   <Vaccination:vaccinations table="vaccinated"/>
-                
+                  
+                    <form class="forms-sample" method="post" action="three.jsp">
+                         <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="hidden" class="form-control" name="id" id="exampleInputName1" placeholder="Name" required value="${param.id}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" name="name" id="exampleInputName1" placeholder="Name" required value="${param.name}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Location</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" name="location" placeholder="Location" required value="${param.location}">
+                      </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail3">Number of Patients</label>
+                        <input type="number" class="form-control" id="exampleInputEmail3" name="patients" placeholder="Number" required value="${param.patients}">
+                      </div>
+                       <div class="form-group">
+                        <label for="exampleInputEmail3">Health Centre Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" name="email" placeholder="Email" required value="${param.email}">
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2" value="submit">Submit</button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
                   </div>
                 </div>
               </div>

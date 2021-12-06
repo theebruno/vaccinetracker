@@ -70,7 +70,7 @@
 					<tr>
 						<td>${param.person}</td>
                                                 <td>${param.nin}</td>
-                                                  <td>${param.centre}</td>
+                                                <td>${param.centre}</td>
 						<td>${param.vaccine}</td>
 						<td>${param.date}</td>
                     

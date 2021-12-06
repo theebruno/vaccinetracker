@@ -29,7 +29,7 @@ public int doStartTag()throws JspException{
         ResultSet rs=ps.executeQuery();  
         if(rs!=null){  
           
-        if(rs.next()){  
+     
            while(rs.next()) {
    
     out.println("<option value=\""+rs.getString(1) + "\">"+rs.getString(2) + "</option>");
@@ -38,11 +38,7 @@ public int doStartTag()throws JspException{
 
    } 
              
-                  
-        }else{  
-            out.write("No records found!");  
-        }  
-     
+         
           
         }  
        

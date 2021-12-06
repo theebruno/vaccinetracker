@@ -35,10 +35,11 @@ public int doStartTag()throws JspException{
         for(int i=1;i<=totalcols;i++){  
             out.write("<th>"+rsmd.getColumnName(i)+"</th>");  
         }  
+        out.write("<th>Actions</th>");
         out.write("</tr> </thead>");  
         //column value  
            out.write("<tbody>");   
-        if(rs.next()){  
+    
            while(rs.next()) {
     out.println("<tr>");
     out.println("<td>"+rs.getString(1) + "</td>");
@@ -47,14 +48,18 @@ public int doStartTag()throws JspException{
     out.println("<td>"+rs.getString(4) + "</td>");
      out.println("<td>"+rs.getString(5) + "</td>");
         out.println("<td>"+rs.getString(6) + "</td>");
+        out.println("<td><form method=\"post\" action=\"update.jsp\">\n" +
+"                      <input type=\"hidden\" name=\"name\" value=\""+rs.getString(2) + "\">\n" +
+"                      <input type=\"hidden\" name=\"location\" value=\""+rs.getString(3) + "\">\n" +
+"                      <input type=\"hidden\" name=\"patients\" value=\""+rs.getString(4) + "\">\n" +
+"                      <input type=\"hidden\" name=\"id\" value=\""+rs.getString(1) + "\">"
+        + "<input type=\"hidden\" name=\"email\" value=\""+rs.getString(6) + "\"><button type=\"submit\" class=\"btn btn-social-icon btn-outline-facebook\"><i class=\"mdi mdi-table-edit\"></i></button></form></td>");
     out.println("</tr>");
 
    } 
               out.write("</tbody>"); 
                   
-        }else{  
-            out.write("No records found!");  
-        }  
+        
         out.write("</table>");  
           
         }  

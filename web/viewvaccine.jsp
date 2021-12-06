@@ -69,6 +69,10 @@
                     <span>Log Out</span>
                     <i class="mdi mdi-logout ml-1"></i>
                   </a>
+                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="registration.jsp">
+                    <span>Add Account</span>
+                    <i class="mdi mdi-account-multiple-plus ml-1"></i>
+                  </a>
                 </div>
               </div>
             </li>
@@ -165,10 +169,10 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> View Health Centres</h3>
+              <h3 class="page-title"> View Vaccines</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Health Centre</a></li>
+                  <li class="breadcrumb-item"><a href="#">Vaccine Inventory</a></li>
                   <li class="breadcrumb-item active" aria-current="page">View</li>
                 </ol>
               </nav>

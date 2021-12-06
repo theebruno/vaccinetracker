@@ -39,7 +39,7 @@ public int doStartTag()throws JspException{
         out.write("</tr> </thead>");  
         //column value  
            out.write("<tbody>");   
-        if(rs.next()){  
+        
            while(rs.next()) {
     out.println("<tr>");
     out.println("<td>"+rs.getString(1) + "</td>");
@@ -51,9 +51,7 @@ public int doStartTag()throws JspException{
    } 
               out.write("</tbody>"); 
                   
-        }else{  
-            out.write("No records found!");  
-        }  
+        
         out.write("</table>");  
           
         }  
