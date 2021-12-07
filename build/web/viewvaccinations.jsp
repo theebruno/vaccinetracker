@@ -53,7 +53,9 @@
     if(session.getAttribute("logUser") == null){
         response.sendRedirect("index.jsp");
     }
+        else{
      out.println(user.getName());
+}
 %></p>
                 </div>
               </a>

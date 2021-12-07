@@ -52,8 +52,9 @@
                   <p class="mb-1 text-black"><% User user = (User) session.getAttribute("logUser");
     if(session.getAttribute("logUser") == null){
         response.sendRedirect("index.jsp");
-    }
+    }    else{
      out.println(user.getName());
+}
 %></p>
                 </div>
               </a>

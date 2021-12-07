@@ -1,11 +1,7 @@
 <%@ taglib uri="/WEB-INF/tlds/m" prefix="Vaccination" %>  
 <%@page import="org.health.system.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% User user = (User) session.getAttribute("logUser");
-    if(user==null){
-        response.sendRedirect("index.jsp");
-    }
-%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +49,14 @@
                   <img src="assets/images/user.png" alt="image">
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black"><%= user.getName() %></p>
+                  <p class="mb-1 text-black"><% User user = (User) session.getAttribute("logUser");
+    if(session.getAttribute("logUser") == null){
+        response.sendRedirect("index.jsp");
+    }
+         else{
+     out.println(user.getName());
+}
+%></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
